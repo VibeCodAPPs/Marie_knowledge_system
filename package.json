@@ -1,0 +1,48 @@
+{
+  "name": "marie-knowledge-system",
+  "version": "0.1.0",
+  "description": "AI-powered personal knowledge management system inspired by Marie Curie",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "cd backend && python -m uvicorn app.main:app --reload --host 0.0.0.0 --port 8000",
+    "dev:frontend": "cd frontend && npm run dev",
+    "build": "npm run build:frontend && npm run build:backend",
+    "build:frontend": "cd frontend && npm run build",
+    "build:backend": "cd backend && python -m pip install -r requirements.txt",
+    "test": "npm run test:backend && npm run test:frontend",
+    "test:backend": "cd backend && python -m pytest",
+    "test:frontend": "cd frontend && npm run test",
+    "setup": "npm run setup:backend && npm run setup:frontend",
+    "setup:backend": "cd backend && python -m venv venv && pip install -r requirements.txt",
+    "setup:frontend": "cd frontend && npm install",
+    "lint": "npm run lint:backend && npm run lint:frontend",
+    "lint:backend": "cd backend && python -m flake8 app/",
+    "lint:frontend": "cd frontend && npm run lint"
+  },
+  "keywords": [
+    "knowledge-management",
+    "zettelkasten",
+    "ai",
+    "rag",
+    "learning",
+    "marie-curie"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "python": ">=3.9.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/marie-knowledge-system.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/marie-knowledge-system/issues"
+  },
+  "homepage": "https://github.com/yourusername/marie-knowledge-system#readme"
+}

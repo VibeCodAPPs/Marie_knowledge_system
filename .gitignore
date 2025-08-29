@@ -2,6 +2,7 @@
 __pycache__/
 *.py[cod]
 *$py.class
+# Note: Allow .py source files, only exclude compiled files
 *.so
 .Python
 build/
@@ -150,7 +151,8 @@ Thumbs.db
 data/
 uploads/
 chroma_db/
-models/
+# Allow Python models directory for SQLAlchemy models
+# models/
 *.pkl
 *.joblib
 
